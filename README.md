@@ -52,14 +52,20 @@ example instance:
       "modifiedDate": 1361911170254
     }
 
-this is a self contained single page app that needs no backend. There are ajax calls that are mocked out with Mockjax (see `myapp/mocks.js`).
+## how to run
 
-This form editor loosely follows the MVVM design pattern, though it does not use data binding. When you click submit, form changes will persist to a Backbone.Model. The backbone model could be wired up to sync to a RESTful backend, or the application could listen to events on the model and make an arbitrary request, or the application could add <form> html to the page that can submit the form.
+serve up test.html right off the filesystem with your favorite HTTP server, for example `python -m SimpleHTTPServer`.
 
 From the javascript console, try these commands while watching the live DOM:
 
-    window.crudFormView.model.get('tmfItemId')
-    window.crudFormView.model.set('tmfItemId', 42)
-    window.crudFormView.model.get('tmfItemId')
+     window.crudFormView.model.get('tmfItemId')
+     window.crudFormView.model.set('tmfItemId', 42)
+     window.crudFormView.model.get('tmfItemId')
+
+## details
+
+this is a self contained single page app; There are ajax calls that are mocked out with Mockjax (see `myapp/mocks.js`).
+
+This form editor loosely follows the MVVM design pattern, though it does not use data binding. When you click submit, form changes will persist to a Backbone.Model. The backbone model could be wired up to sync to a RESTful backend, or the application could listen to events on the model and make an arbitrary request, or the application could add <form> html to the page that can submit the form.
 
 Code is proof of concept and does some bad things, like mutating DOM while attached.
