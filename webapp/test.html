@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>kendo dynamic crud form demo | dustin getz </title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="vendor/kendo/styles/kendo.common.min.css"/>
+    <link rel="stylesheet" href="vendor/kendo/styles/kendo.default.min.css" />
+
+    <link rel="stylesheet" href="css/orderform.css" />
+</head>
+<body>
+
+<div data-wspt="root"></div>
+
+<script type="text/javascript" src="vendor/require-2.1.6.js"></script>
+<script type="text/javascript" src="myapp/require-shims.js"></script>
+
+<script>
+    (function(){
+        'use strict';
+
+        require(['myapp/crud', 'myapp/mocks'], function(crud, mocks) {
+            mocks.install();
+            crud.entrypoint();
+        });
+    })();
+</script>
+</body>
+</html>
